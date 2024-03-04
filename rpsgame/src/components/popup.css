@@ -1,0 +1,99 @@
+body {
+    margin:0;
+    padding: 0;
+    background-image: url("../public/background.jpg");
+    background-size:cover;  
+    height: 100;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.426);
+    transition: opacity 500ms;
+    opacity: 1;
+  }
+  .gameover{
+    margin-top: 0;
+    padding: 0;
+    height: 150px;
+    width: 400px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222222ab);
+    filter: drop-shadow(5px 5px 5px #222222b0);
+  }
+  .win{
+    height: 150px;
+    width: 200px;
+    margin-right: 10px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222222b0);
+
+  }
+  .popup {
+    margin: 120px auto;
+    padding: 20px;
+    height: 430px;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.68); 
+    width: 30%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 5s ease-in-out;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222222b0);
+  }
+  
+ 
+
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 50px;
+    font-weight: bolder;
+  }
+  .last{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .return{
+ 
+    margin: 20px;
+    display: flex;
+    border-radius: 20px;
+    justify-self: center;
+    align-items: center;
+    border: none;
+  }
+  .return:hover{
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222222b0);
+  }
+
+
+
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
