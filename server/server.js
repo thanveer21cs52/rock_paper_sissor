@@ -10,7 +10,7 @@ const joinarr = [];
 const movearr = [];
 const playerlog = [];
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 const FRONTEND_URL = process.env.FRONTEND_URL || "*"; // fallback for testing
 
 // CORS setup

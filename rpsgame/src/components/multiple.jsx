@@ -14,7 +14,7 @@ import rstone from "../public/rstone.png";
 import rsissor from "../public/rsissor.png";
 import rounds from "../sounds/round.mp3";
 import wrong from "../sounds/wrong.mp3";
-const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || "http://localhost:3001";
+const SOCKET_URL = process.env.REACT_APP_SOCKET_URL;
 const socket = io.connect(SOCKET_URL);
 
 
