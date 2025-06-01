@@ -1,6 +1,7 @@
 import React from "react";
 import "./final.css";
-import vs from "../public/bang.png";
+import bang from "../public/bang.png";
+import vs from "../public/vs.png";
 import useSound from "use-sound";
 import { useState, useEffect, useMemo } from "react";
 import paper from "../public/paper.png";
@@ -195,7 +196,7 @@ function Single() {
                 alt="paper"
               />
             </div>
-            <div>{check && <img src={vs} id="vs" alt="vs" />}</div>
+            <div>{check ? <img src={bang} id="vs" alt="vs" /> : <img src={vs} id="vs" alt="vs" />}</div>
             <div>
               <img
                 src={rimg}

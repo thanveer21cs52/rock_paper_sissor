@@ -1,46 +1,92 @@
-body{
-
+body {
   background-size: cover;
- 
 }
-.blur{
+
+/* Container centered vertically + horizontally */
+.blur {
   height: 100vh;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- margin-top: -30px;
-
-
-
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+  padding: 0 1rem; /* Padding so it doesn't stick to edges on tiny screens */
+  box-sizing: border-box;
 }
-.blur img{
-   height: 550px;
-   width: 660px;
-   -webkit-filter: drop-shadow(5px 5px 5px #222);
-   filter: drop-shadow(5px 5px 5px #222222b0);
+
+/* Image scaling */
+.blur img {
+  max-width: 90vw;
+  width: 660px;   /* Original desktop size */
+  height: auto;
+  max-height: 55vh;
+  filter: drop-shadow(5px 5px 5px #222222b0);
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  object-fit: contain;
 }
-.butons{
- display: flex;
- justify-content: center;
- align-items: center;
- gap: 40px;
- width: 660px;
+
+/* Buttons container: horizontal on big, vertical stack on small */
+.butons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 660px;
+  max-width: 90vw;
+  margin-top: 2rem;
+  flex-wrap: nowrap;
 }
-.blur button{
-   width: 300px;
-   height: 60px;
+
+/* Buttons style and responsive size */
+.blur button {
+  width: 300px;
+  max-width: 45vw; /* scale down on smaller */
+  height: 60px;
   font-size: 30px;
   font-weight: bolder;
   border-radius: 30px;
-  background-color: #4c4d56 ;
+  background-color: #4c4d56;
   outline: none;
   color: white;
-  border: none;
-  border: white 2px solid;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-.blur button:hover{
+
+/* Hover effect */
+.blur button:hover {
   background-color: #0f0f0f;
-  border: 2px white solid;
+  border-color: white;
+}
+
+/* Media query for small screens (phones/tablets) */
+@media (max-width: 768px) {
+  .butons {
+    flex-direction: column; /* stack buttons vertically */
+    width: 100%;
+    gap: 20px;
+  }
+  
+  .blur button {
+    width: 100%; /* full width on small */
+    max-width: none;
+    font-size: 24px;
+    height: 55px;
+  }
+
+  .blur img {
+    max-height: 40vh;
+  }
+}
+
+/* Extra small devices tweak */
+@media (max-width: 400px) {
+  .blur button {
+    font-size: 20px;
+    height: 50px;
+  }
+
+  .blur img {
+    max-height: 35vh;
+  }
 }

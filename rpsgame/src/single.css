@@ -1,54 +1,78 @@
 .modal {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    position: absolute;
+    position: fixed; /* fixed for proper viewport coverage on scroll */
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(254, 126, 126, 0.7);
-    transition: all 0.4s;
+    transition: all 0.4s ease;
     visibility: hidden;
     opacity: 0;
+    z-index: 9999; /* always on top */
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
 }
 
 .content {
-    position: absolute;
+    position: relative; /* absolute inside flex is messy */
     background: white;
     width: 400px;
+    max-width: 90vw; /* mobile friendly */
     padding: 1em 2em;
     border-radius: 4px;
+    box-sizing: border-box;
 }
-.top{
+
+/* Section styles */
+.top {
     background-color: aqua;
     height: 150px;
-    display:flex;
+    display: flex;
     font-size: 30px;
     justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* wrap on small screens */
+    padding: 0 1rem;
 }
-.middle{
+
+.middle {
     background-color: aquamarine;
     height: 350px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 1rem;
 }
-.bottom{
+
+.bottom {
     background-color: rgb(127, 131, 255);
     height: 300px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 1rem;
 }
-.bottom img{
+
+.bottom img {
     cursor: pointer;
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
 }
-.checked {
-    color: orange;
+
+/* Animation stays same */
+.shake {
+    animation: shake 0.9s infinite;
 }
-.shake{
-        animation: shake 0.9s;
-        animation-iteration-count: infinite;
-}
+
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -61,5 +85,7 @@
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
+}
+
+/* Responsive breakpoints */
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import "./multiple.css"
-import vs from "../public/bang.png";
+import bang from "../public/bang.png";
+import vs from "../public/vs.png";
 import { Link, useNavigate } from "react-router-dom";
 import {useEffect,useState} from "react"
 import useSound from "use-sound";
@@ -13,7 +14,9 @@ import rstone from "../public/rstone.png";
 import rsissor from "../public/rsissor.png";
 import rounds from "../sounds/round.mp3";
 import wrong from "../sounds/wrong.mp3";
-const socket=io.connect("http://localhost:3001")
+const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || "http://localhost:3001";
+const socket = io.connect(SOCKET_URL);
+
 
 
 function Multiple() {
@@ -281,7 +284,7 @@ function start() {
                   alt="paper"
                 />
               </div>
-              <div>{check && <img src={vs} id="vs" alt="vs" />}</div>
+               <div>{check ? <img src={bang} id="vs" alt="vs" /> : <img src={vs} id="vs" alt="vs" />}</div>
               <div>
                 <img
                   src={rimg}
